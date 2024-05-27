@@ -12,12 +12,12 @@ export function loadFromStorage() {
       {
         productId: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
         quantity: 2,
-        deliveryOptionId: "1",
+        deliveryOptionId: '1',
       },
       {
         productId: "8c9c52b5-5a19-4bcb-a5d1-158a74287c53",
         quantity: 1,
-        deliveryOptionId: "2",
+        deliveryOptionId: '2',
       }
       // these are the sample objects that are added to the cart array. using javascript
     ];
