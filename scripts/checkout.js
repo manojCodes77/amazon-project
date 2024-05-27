@@ -4,6 +4,8 @@ import { renderPaymentSummary } from "./checkout/paymentSummary.js";
 
 import {renderOrderTotalItems} from "./checkout/items.js";
 
+import'../data/cart-oop.js';
+
 renderOrderTotalItems();
 
 renderOrderSummary();
