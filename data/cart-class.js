@@ -1,16 +1,16 @@
 // we generally use pascalcase for things that generate objects
 class Cart{
     cartItems= undefined;
-    localStorageKey=undefined;
+    #localStorageKey=undefined;//we use # to make it private
 
     constructor(localStorageKey){
-        cart.localStorageKey=localStorageKey;
+        this.#localStorageKey=localStorageKey;
         // businessCart.localStorageKey='business-cart-oop';
-        cart.loadFromStorage();
+        this.#loadFromStorage();
         // businessCart.loadFromStorage();
     }
 
-    loadFromStorage() {//this is a shortcut of loadFromStorage: function() {}
+    #loadFromStorage() {//this is a shortcut of loadFromStorage: function() {}
         this.cartItems = JSON.parse(localStorage.getItem(this.localStorageKey));
         if (!this.cartItems) {
             this.cartItems = [
@@ -30,7 +30,7 @@ class Cart{
     };
 
     saveToStorage() {
-        localStorage.setItem(this.localStorageKey, JSON.stringify(this.cartItems));
+        localStorage.setItem(this.#loadFromStorage, JSON.stringify(this.cartItems));
     };
 
     addToCart(productId) {
@@ -94,6 +94,9 @@ class Cart{
 
 const cart= new Cart();
 const businessCart= new Cart();
+
+// cart.#localStorageKey='cart-oop';
 console.log(cart);
 console.log(businessCart);
 console.log(businessCart instanceof Cart);
+
